@@ -1,0 +1,17 @@
+name: Codechecker
+on: push
+
+jobs:
+  job1_name:
+  
+    name: Step1_name
+    runs-on: ubuntu-latest   
+    steps:
+      -name : Checkout code
+       uses: actions/checkout@v2
+       
+      -name : Codechecker
+       uses: github/super-inter@v4.9.5
+       env:
+        DEFAULT_BRANCH : main
+        GITHUB_TOKEN : ${{ secrets.GITHUB_TOKEN}}
